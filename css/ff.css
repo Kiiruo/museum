@@ -1,0 +1,150 @@
+body {
+    background-image: url(/img/sait.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    text-shadow: 1px 2px 2px black;
+    text-align: center;
+    margin: 20px 0;
+    color: rgb(252, 243, 243);
+}
+
+form {
+    background: #fff;
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 15px 15px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Плавный переход для границы и тени */
+    background-color: rgba(233, 240, 250, 0.8); /* Полупрозрачный фон */
+}
+
+form:hover{
+  border-color: #555555; /* Изменен цвет границы при наведении */
+  box-shadow: 5px 5px 10px #252525; /* Более выраженная тень при наведении */
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="tel"],
+input[type="email"],
+input[type="number"],
+input[type="date"],
+select {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #757575;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+h2 {
+    font-size: 1.2em;
+    margin: 10px 0;
+    color: #444;
+}
+
+button {
+    background-color: #6e6e6e;
+    color: rgb(0, 0, 0);
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #8f0000;
+}
+
+/* footer */
+
+.footer {
+  background-color: #484f55;
+  color: #ecf0f1;
+  padding: 10px 0;
+  text-align: center;
+  min-width: 100%;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+    min-width: 200px; 
+  padding: 15px;
+}
+
+.footer-section h3 {
+  color: #a72626;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.footer-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-section a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section a:hover {
+    color: #a72626;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+    text-align: center;
+    padding: 10px 0;
+    background-color: #a72626;
+    width: 100%;
+    z-index: 1;
+}
+
+@media screen and (max-width: 768px){
+  .card-wrapper{
+    margin: 0 10px 25px;
+  }
+}

@@ -1,0 +1,481 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box
+}
+
+body {
+  flex-direction: column; 
+  align-items: center;
+  justify-content: center;
+  min-width: 100vh;
+  background-image: url(/img/sait.jpg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover; 
+  font-family: "Open Sans", sans-serif;
+}
+
+/*Шапка*/
+
+header {
+  background-color: black;
+  position: fixed; /* Фиксированная шапка */
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100; /* Убедитесь, что шапка всегда поверх других элементов */
+}
+
+.header_container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 70px; /* Убираем margin left, устанавливаем padding */
+}
+
+.menu_list {
+  display: flex;
+  align-items: center;
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+    padding: 0 15px; /* Устанавливаем отступы */
+    transition: color 0.3s ease; /* Плавный переход для цвета */
+}
+
+a:hover{
+    color: #a0a0a0; /* Цвет при наведении*/
+}
+
+.logo {
+  display: block;
+}
+
+.logo_img {
+  display: block;
+  width: 100px;
+    margin-left: 25px;
+  user-select: none; /* Отключаем выделение текста */
+}
+
+.menu_item {
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+    margin-right: 20px;
+}
+
+.menu_item:hover {
+    opacity: 1;
+}
+
+/*Контакты*/
+
+.menu__item:not(:last-child) {
+  margin-right: 20px;
+}
+
+.menu__item:last-child {
+  opacity: 1;
+  margin-right: 15px;
+}
+
+.menu__number {
+  color: white;
+  font-size: 20px;
+}
+
+.menu__btn {
+    color: white;
+    padding: 0;
+    border: none;
+    font: inherit;
+    background-color: transparent;
+    cursor: pointer;
+    padding-left: 30px;
+    text-decoration: underline;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    opacity: 1;
+}
+
+
+#close-call-modal-btn {
+  padding: 5px;
+  border: none;
+  font: inherit;
+  background-color: transparent;
+  cursor: pointer;
+  position: absolute; /* Абсолютное позиционирование */
+  top: 8px;
+  right: 8px;
+  transition: transform 0.3s ease; /* Плавный эффект при наведении */
+}
+
+#close-call-modal-btn:hover {
+  transform: scale(1.2); /* Увеличение при наведении */
+}
+
+.modal {
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 998; /* Убедитесь, что модальное окно выше других элементов */
+  background-color: rgba(0, 0, 0, 0.3);
+  display: flex; /* Используем flex для центрирования */
+  align-items: center;
+  justify-content: center;
+  overflow-y: auto; /* Разрешаем прокрутку, если контент не помещается */
+  box-shadow: 6px 6px 4px 6px rgba(34, 60, 80, 0.2);
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.4s, visibility 0.4s;
+}
+
+.modal-box {
+  border: 2px solid rgb(105, 145, 155);
+  max-width: 500px;
+  padding: 45px;
+  background-color: white;
+  margin: 30px 15px;
+  box-shadow: 0px 0px 10px 5px rgba(34, 60, 80, 0.44);
+  transform: scale(0);
+  transition: transform 0.6s;
+}
+
+.modal.open {
+visibility: visible;
+opacity: 1;
+}
+
+.modal.open .modal-box {
+transform: scale(1);
+}
+
+.image-scroller {
+overflow: hidden;
+}
+
+/*Hello*/
+
+.hello {
+  color: white;
+  text-align: center;
+}
+
+.hello_text {
+text-shadow: 1px 2px 2px black;
+  font-size: 60px; /* Задаем размер шрифта */
+font-weight: bold; /* Задаем жирное начертание */
+margin: 0 auto; /* Центрируем по горизонтали */
+  margin-bottom: 20px;
+}
+
+#p1 {
+font-size: 60px;
+margin-top: 10%;
+}
+
+#p2 {
+font-size: 45px;
+margin-top: 3%;
+}
+
+.information {
+text-shadow: 1px 2px 2px black;
+font-size: 20px;
+color: white;
+text-align: center;
+margin: 3% auto 0;
+}
+
+/*Покупка_билетов*/
+
+.button-container {
+  display: flex;
+  justify-content: center; /* Центрируем кнопку по горизонтали */
+  margin-bottom: 50px; /* Добавим нижний отступ */
+}
+
+.buying_a_ticket-btn {
+  margin-top: 100px;
+  border: none;
+  font: inherit; /* Наследуем шрифт от родителя */
+  background-color: transparent;
+  cursor: pointer;
+  color: white;
+  font-weight: 500;
+  padding: 10px 10px; /* Увеличим padding */
+  border-radius: 5px;
+  background-color: #a72626;
+  transition: all 0.3s ease; /* Плавный переход */
+  user-select: none; /* Отключаем выделение текста */
+}
+
+.buying_a_ticket-btn:hover {
+  box-shadow: 1px 1px 5px 2px rgba(156, 136, 136, 0.7); /* Добавляем тень при наведении */
+}
+
+/*museum_info*/
+
+.museum {
+  color: white;
+  font-family: "Open Sans", sans-serif;
+}
+
+.museum_text {
+  text-shadow: 1px 2px 2px black;
+  font-size: 45px;
+  z-index: 1; /* Определяем порядок наложения */
+  margin-top: 100px;
+  text-align: center;
+  font-weight: bold;
+  margin-bottom: 30px; /* Добавим нижний отступ */
+}
+
+/*museum_info_cards*/
+
+.wrapper_museum_1 {
+  width: 1300px auto;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 auto;
+  align-items: center;
+  padding-bottom: 50px;
+}
+
+.the_museum {
+  background-color: #fff;
+  width: 1000px;
+  border-radius: 20px;
+  padding: 20px;
+  box-shadow: 8px 8px 40px #3b3a3a;
+  margin-top: 100px;
+  background-color: rgba(233, 240, 250, 0.8);
+  transition: border 0.2s ease;
+  border: 2px solid transparent;
+}
+
+.the_museum:hover {
+  border: 2px solid #646464;
+}
+
+.text_img_museum {
+  border-radius: 11px;
+  width: auto; /*  автоматическая ширина */
+  height: 300px;
+  display: block;
+  margin: 0 auto; /* Центрирование по горизонтали */
+  user-select: none; /* Запрещает выделение текста */
+  -webkit-user-select: none; 
+  -ms-user-select: none; 
+}
+
+
+.text_title_museum_1 {
+  margin-top: 20px;
+  font-size: 25px;
+  font-weight: 500;
+  flex-direction: column; /* Выравнивание вертикально */
+  align-items: center; /* Центрирование по горизонтали */
+  text-align: center; /* Центрирование текста */
+}
+
+.text_title_museum_2 {
+  margin-top: 15px;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+/*Exhibits_info*/
+
+.rere {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 100vh;
+}
+
+.Exhibits {
+  color: white;
+}
+
+.Exhibits_text {
+  text-shadow: 1px 2px 2px black;
+  font-size: 40px;
+  z-index: 1;
+  margin-top: 93px;
+  text-align: center;
+  font-weight: bold;
+  margin-left: auto;
+  margin-right: auto;
+  padding-bottom: 50px;
+}
+
+/*Exhibits_info_cards*/
+
+.card-wrapper {
+  max-width: 1300px;
+  margin: 0 60px 35px;
+  padding: 20px 10px;
+  overflow: hidden;
+}
+
+.card-list .card-item {
+  list-style: none;
+  z-index: -1;
+}
+
+.card-list .card-item .card-link {
+  user-select: none;
+  display: block;
+  background: #fff;
+  padding: 18px;
+  border-radius: 12px;
+  text-decoration: none;
+  border: 2px solid transparent;
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease; /* Плавный переход для границы и тени */
+  background-color: rgba(233, 240, 250, 0.8); /* Полупрозрачный фон */
+  color: #000; 
+}
+
+.card-list .card-item .card-link:active {
+  cursor: grabbing;
+}
+
+.card-list .card-item .card-link:hover {
+  border-color: #797979; /* Изменен цвет границы при наведении */
+  box-shadow: 2px 2px 5px #333333; /* Более выраженная тень при наведении */
+}
+
+.card-list .card-link .card-image {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.card-list .card-link .badge {
+  color: #000; /* Черный цвет текста для бейджа */
+  padding: 4px 16px; /* Увеличим padding */
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin: 16px 0 18px;
+  background: #696969;
+  width: fit-content;
+  border-radius: 50px;
+}
+
+.card-list .card-link .card-title {
+  font-size: 1.19rem;
+  color: #000; /* Черный цвет текста для заголовка */
+  font-weight: 600;
+}
+
+/* Добавляем правило для изменения цвета текста */
+.card-list .card-link * {
+  color: #000; /* Устанавливаем черный цвет для всех дочерних элементов card-link */
+}
+
+.card-wrapper .swiper-pagination-bullet {
+  height: 13px;
+  width: 13px;
+  opacity: 0.5;
+  background: #a72626;
+  transition: opacity 0.2s ease; /* Плавный переход для opacity */
+}
+
+.card-wrapper .swiper-pagination-bullet:hover {
+  opacity: 1; /* Полная непрозрачность при наведении */
+}
+
+.card-wrapper .swiper-pagination-bullet-active {
+  opacity: 1; /* Полная непрозрачность активной точки */
+}
+
+/* Кнопки слайдера (стрелки) */
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+  color: #a72626; /* Основной цвет */
+  transition: text-shadow 0.2s ease;
+  text-shadow: none; /* Убираем тень по умолчанию */
+}
+
+.swiper-button-next:hover::after,
+.swiper-button-prev:hover::after {
+  text-shadow: 2px 2px 3px #272121;
+}
+
+/* footer */
+
+.footer {
+  background-color: #484f55;
+  color: #ecf0f1;
+  padding: 10px 0;
+  text-align: center;
+  min-width: 100%;
+  position: relative;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section {
+  flex: 1;
+  min-width: 200px;
+  padding: 15px;
+}
+
+.footer-section h3 {
+  color: #a72626;
+}
+
+.footer-section p,
+.footer-section ul {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.footer-section ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-section a {
+  color: #ecf0f1;
+  text-decoration: none;
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-section a:hover {
+  color: #a72626;
+  transform: scale(1.1);
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 10px 0;
+  background-color: #a72626;
+}
+
+@media screen and (max-width: 768px){
+  .card-wrapper{
+    margin: 0 10px 25px;
+  }
+}
